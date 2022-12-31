@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pendaftaran Manager Ketua Bokep</title>
+  <style>
+    /* CSS untuk mengatur tampilan form */
+    form {
+      width: 500px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    input[type="text"], input[type="email"] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    div.form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Form pendaftaran hiasan -->
+  <form id="form-pendaftaran">
+    <h2>Pendaftaran Manager Ketua Bokep</h2>
+    <div class="form-group">
+      <label for="nama">Nama</label>
+      <input type="text" id="nama" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+    </div>
+    <div class="form-group">
+      <label for="Kekuatan">Seberapa Jago</label>
+      <select id="jenis-hiasan">
+        <option value="tangan">Hiasan Tangan</option>
+        <option value="meja">Hiasan Meja</option>
+        <option value="dinding">Hiasan Dinding</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="deskripsi">Deskripsi Hiasan</label>
+      <textarea id="deskripsi" rows="5" required></textarea>
+    </div>
+    <input type="submit" value="Daftar">
+  </form>
+
+  <!-- Script untuk menangani event submit form -->
+  <script>
+    const form = document.getElementById('form-pendaftaran');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // mencegah form 
+        // mengambil nilai input dari form
+  const nama = form.elements['nama'].value;
+  const email = form.elements['email'].value;
+  const jenisHiasan = form.elements['jenis-hiasan'].value;
+  const deskripsi = form.elements['deskripsi'].value;
+
+  // menampilkan pesan konfirmasi pendaftaran
+  const pesan = `Terima kasih ${nama} telah mendaftar hiasan ${jenisHiasan} dengan deskripsi: ${deskripsi}. Kami akan menghubungi Anda melalui email ${email}.`;
+  alert(pesan);
+});
+
